@@ -322,10 +322,17 @@ function each(coll, f) {
   //================================================================================
   // Theoretical questions.
   // 1- In your own words,Why do we use Closures ?
-  
+    //We use closures so we can maintain the state of certian variables and functions in a certain scope.
+
   // 2- In OOP, what does "this" refer to ?
-  
+    // it refers to the instantiated object from a certain class : for example :
+    // function A(){} // a class
+    // var obj - A() // obj is an object 
+    // so this refers to obj.
+
   // 3- What is jQuery?
-  
+    // Jquery is javascript library that simplyfies (in terms of code) a lot of tasks like DOM manipluations, traversal, animation..etc
+
   // 4- what is the diffrence between Closure's methods and The OOP's methods?
+   // Closure is methods uses more memory than OOP methods, also they are written in the function, while oop methods are written outside of the class.
   
