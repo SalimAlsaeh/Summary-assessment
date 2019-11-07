@@ -245,8 +245,42 @@ function each(coll, f) {
   //  safe('gold-bar','big')
   //  safe('silver-bar','big') => "Can't fit"
   //  safe('money','small') => "watch gold-bar money"
-  
-  // Write your code here .....
+
+  function makeSafe(initial){
+    var storageSizeLimit = initial;
+    var storage = [];
+    return function(item, itemSize){
+      if (storageSizeLimit > 0) {
+
+        if (itemSize === 'big' ) {
+          if (storageSizeLimit - 3 >= 0) {
+            storage.push(item);
+            storageSizeLimit -= 3;            
+          } else {
+            return "Can't fit";
+          }
+
+        } else if (itemSize === 'medium'){
+            if (storageSizeLimit - 2 >= 0) {
+              storage.push(item);
+              storageSizeLimit -= 2;            
+            } else {
+              return "Can't fit";
+            }
+        } else if (itemSize === 'small'){
+            if (storageSizeLimit - 1 >= 0) {
+              storage.push(item);
+              storageSizeLimit -= 1;            
+            } else {
+              return "Can't fit";
+            }
+        }
+
+      } else {
+          return storage.join(' ');
+        }
+      }
+  }
   
   //=============================================================================
   /*                                  Q8                                       */
