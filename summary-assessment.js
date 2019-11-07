@@ -200,9 +200,34 @@ function each(coll, f) {
   */
   
   // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
-  
-  // Write your code here .....
-  
+  //Yes I am
+
+  function ReadingList() {
+    var book = {};
+    book.read = 0;
+    book.unRead = 0;
+    book.toRead = [];
+    book.currentRead;
+    book.readBooks = [];
+    book.addBook = addBook;
+    book.finishCurrentBook = finishCurrentBook;
+    return book;
+  }
+
+  var addBook = function(bookName){
+    this.toRead.push(bookName);
+    this.unRead += 1;
+  }
+
+  var finishCurrentBook = function(){
+    if (this.currentRead !== undefined) {
+       this.readBooks.push(this.currentRead);
+    }
+    this.read += 1;
+    this.currentRead = this.toRead.shift();
+    this.unRead -= 1;
+  }
+
   //=============================================================================
   /*                                  Q7                                       */
   //=============================================================================
