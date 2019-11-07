@@ -143,8 +143,39 @@ function each(coll, f) {
   // pizza.eatSlice();
   // pizza.eatSlice();
   // pizza.eatSlice();
-  
-  // Write your code here .....
+
+  function makePizza(crust, size, numberOfSlice) {
+    var crust = crust;
+    var size = size;
+    var numberOfSlice = numberOfSlice;
+    var ingredients = [];
+    var pizza = {};
+
+    pizza.addIngredients = function(ingredient){
+      ingredients.push(ingredient);
+    }
+    pizza.displayIngredients = function(){
+      var str = '';
+      each(ingredients, function(element){
+        str += element +',';
+      });
+      return "The ingredients are: " + str;
+    }
+    pizza.bakePizza = function(){
+      setTimeout(function(){
+        console.log("Your " + crust + ' ' + size + ' ' + numberOfSlice + ' pizza is done');
+      }, 2000);
+    }
+    pizza.eatSlice = function(){
+      if (numberOfSlice > 0) {
+        numberOfSlice -= 1;
+        return "enjoy the slice";
+      }
+      return "there ain't no pizza for ya!"
+    }
+
+    return pizza
+  }
   
   //=============================================================================
   /*                                  Q6                                      */
