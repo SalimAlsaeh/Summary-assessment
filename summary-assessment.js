@@ -75,7 +75,14 @@ function each(coll, f) {
   // countOccurrences("hello, world!", "l"); // 3
   
   function countOccurrences(string, character) {
-      // your code is here
+      var stringsArray = string.split('');
+      return reduce(stringsArray, function(count, element){
+        if (element === character) {
+          return count + 1;
+        } else {
+          return count;
+        }
+      }, 0)
   }
   
   //=============================================================================
