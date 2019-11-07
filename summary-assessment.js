@@ -82,7 +82,7 @@ function each(coll, f) {
         } else {
           return count;
         }
-      }, 0)
+      }, 0);
   }
   
   //=============================================================================
@@ -94,7 +94,10 @@ function each(coll, f) {
   // wordsLongerThanThree("Hello Mad World") //["Hello", "World"]
   
   function wordsLongerThanThree(str) {
-      // TODO: your code here 
+    var stringsArray = str.split(' ');
+    return filter(stringsArray, function(element){
+      return element.length > 3;
+    });
   }
   
   //=============================================================================
